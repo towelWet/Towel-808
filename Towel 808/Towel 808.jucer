@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="yGy85m" name="Towel 808" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" displaySplashScreen="1"
+              pluginManufacturer="Wet Towel" pluginName="Towel 808" pluginDesc="808s"
+              pluginVST3Category="Instrument,Sampler" pluginAUMainType="'aumu'"
+              pluginVSTCategory="kPlugCategSynth" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
+              pluginCode="T808" pluginManufacturerCode="Towe">
+  <MAINGROUP id="n4PPQM" name="Towel 808">
+    <GROUP id="{AA7189E7-D9BA-3B35-E7AC-9F3BA1913BBE}" name="Source">
+      <FILE id="wfY5Vy" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="J5n7T0" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="HcprLl" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="dwEYIf" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="0" name="Debug" targetName="NewProject"/>
+        <CONFIGURATION isDebug="1" name="Release" targetName="Towel 808" macOSDeploymentTarget="12.3"
+                       osxCompatibility="12.3 SDK" auBinaryLocation="/Users/traope/Documents/Audio Programming/2022-JUCE/ALL_SDK/AU_SDK"
+                       vst3BinaryLocation="/Users/traope/Documents/Audio Programming/2022-JUCE/ALL_SDK/VST_SDK/VST3_SDK"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_core" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_events" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JuceLibraryCode/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../JuceLibraryCode/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+</JUCERPROJECT>
