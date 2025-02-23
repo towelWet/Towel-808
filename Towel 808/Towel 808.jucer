@@ -23,8 +23,8 @@
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="0" name="Debug" targetName="NewProject"/>
         <CONFIGURATION isDebug="1" name="Release" targetName="Towel 808" macOSDeploymentTarget="12.3"
-                       osxCompatibility="12.3 SDK" auBinaryLocation="/Users/traope/Documents/Audio Programming/2022-JUCE/ALL_SDK/AU_SDK"
-                       vst3BinaryLocation="/Users/traope/Documents/Audio Programming/2022-JUCE/ALL_SDK/VST_SDK/VST3_SDK"/>
+                       osxCompatibility="12.3 SDK" auBinaryLocation="/Users/towelwet/Documents/Audio Programming/2022-JUCE/ALL_SDK/AU_SDK"
+                       vst3BinaryLocation="/Users/towelwet/Documents/Audio Programming/2022-JUCE/ALL_SDK/VST_SDK/VST3_SDK"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../JuceLibraryCode/modules"/>

@@ -388,20 +388,29 @@ juce::AudioProcessorEditor* NewProjectAudioProcessor::createEditor()
 }
 
 //==============================================================================
-void NewProjectAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
+
+void NewProjectAudioProcessor::getStateInformation(juce::MemoryBlock& destData)
 {
-    // Save your plugin's parameters here
-    juce::MemoryOutputStream stream(destData, true);
-    apvts.state.writeToStream(stream);
+    auto state = apvts.copyState();
+    state.setProperty("currentSampleName", currentSampleName, nullptr);
+    std::unique_ptr<juce::XmlElement> xml(state.createXml());
+    copyXmlToBinary(*xml, destData);
 }
 
-void NewProjectAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void NewProjectAudioProcessor::setStateInformation(const void* data, int sizeInBytes)
 {
-    // Restore your plugin's parameters here
-    juce::ValueTree tree = juce::ValueTree::readFromData(data, sizeInBytes);
-    if (tree.isValid())
+    std::unique_ptr<juce::XmlElement> xmlState(getXmlFromBinary(data, sizeInBytes));
+    if (xmlState.get() != nullptr)
     {
-        apvts.state = tree;
+        auto state = juce::ValueTree::fromXml(*xmlState);
+        apvts.replaceState(state);
+        
+        // Restore the selected sample
+        juce::String savedSampleName = state.getProperty("currentSampleName", "");
+        if (savedSampleName.isNotEmpty())
+        {
+            loadSample(savedSampleName);
+        }
     }
 }
 

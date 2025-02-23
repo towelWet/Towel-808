@@ -59,6 +59,9 @@ public:
     // Method to load a sample by name
     void loadSample (const juce::String& sampleName);
 
+    // Method to get current sample name
+    juce::String getCurrentSampleName() const { return currentSampleName; }
+
     // AudioProcessorValueTreeState for parameter management
     juce::AudioProcessorValueTreeState apvts;
     static juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();

@@ -91,8 +91,19 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
     auto sampleNames = audioProcessor.getSampleNames();
 
     // Add items to the ComboBox and configure it
-    sampleSelector.addItemList(sampleNames, 1); // IDs start from 1
-    sampleSelector.setSelectedId(1); // Select the first sample by default
+    sampleSelector.addItemList(sampleNames, 1);
+    
+    // Select the current sample if one is loaded
+    juce::String currentSample = audioProcessor.getCurrentSampleName();
+    if (currentSample.isNotEmpty())
+    {
+        sampleSelector.setText(currentSample, juce::dontSendNotification);
+    }
+    else
+    {
+        sampleSelector.setSelectedId(1); // Select first sample as fallback
+    }
+    
     sampleSelector.addListener(this);
     addAndMakeVisible(sampleSelector);
 }
